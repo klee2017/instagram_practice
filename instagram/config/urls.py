@@ -22,7 +22,7 @@ from config import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^post/$', post_views.post_list.html, name='post_list'),
+    url(r'^post/$', post_views.post_list, name='post_list'),
 ]
 
 urlpatterns += static(
