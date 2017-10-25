@@ -28,6 +28,8 @@ STATICFILES_DIRS = [
     STATIC_DIR,
 ]
 
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+
 f = open(os.path.join(CONFIG_SECRET_DIR, 'settings_common.json'))
 config_secret_common_str = f.read()
 f.close()
@@ -76,7 +78,9 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            TEMPLATE_DIR,
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
